@@ -1,0 +1,26 @@
+1. Yes, it is a legal Python program.
+
+2. Yes, it is a legal Python program.
+
+3. Yes, it is a legal Python program.
+
+4. Yes, it is a legal Python program.
+
+5. No, it is not a legal Python program. Because this program will get
+a TypeError: "proc() missing 1 required positional argument: 'y'".
+
+6. No, it is not a legal Python program. Because this program will get
+a TypeError: proc() takes 1 positional argument but 2 were given.
+
+7. Yes, it is a legal Python program.
+
+8. In fact it will print 10 instead of 200. Because num=10 is in the local scope of the main 
+function, first the actual parameter of num=10 is passed to the function proc(x), 
+and the calculation shows that x=200, and finally the main function print(num=10), 
+so the result is still 10.
+
+9. Yes, it is legal. Because x is a local variable, the scope of action is only in a certain function, 
+so different functions can use the same variable name without affecting each other.
+
+10. Yes, it is legal. Because of the actual parameter y, when the main function calls the proc() function, 
+the actual parameter y is passed to the formal parameter x to get the return value of the calling function.

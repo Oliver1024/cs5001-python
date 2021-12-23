@@ -1,0 +1,22 @@
+1. Did you attempt to make your computer player very smart -- i.e., do something more clever than just pick a random legal move?
+Yes, I tried to make ai more smart but I failed to accomplish that. I just picked a random legal move for AI dropping.
+I tried to make my ai identifiy each possible existing combinations of three tokens that need one more move to won. 
+I was thinking to modify the check winner function to do this, but I runned out of time.
+
+
+2. If so, were you able to accomplish this? Is your computer player as smart as you would like?
+No, my AI just picked a random legal move for each step.
+
+3. How did you determine which piece to play next? Tell us about your “pick next move” algorithm
+For this moment, I just picked a random legal move for AI drop. First, I have a function that returns a available row.
+Then, I drop the disk with having animation. 
+
+
+4. How often did your computer program beat you, or your friends, or whoever tested it out for you?
+Not too often , beacause it picked randomly.
+
+
+5. How would you improve it in the future?
+Ideally, I will use the Monte Carlo tree algorithm to implement a smarter AI drop. 
+At each step, I will simulate the way AI can win in the end and calculate the score.
+Every time AI drops, it drops according to the step with the highest score.

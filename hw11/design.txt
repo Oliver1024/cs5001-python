@@ -1,0 +1,219 @@
+0. Some contents included in connect_4.pyde file
+
+SPACE = {'w': 700, 'h': 700}   # set the size of canvas
+# set board width and height
+width = 700
+height = 600
+cell_size = 100  # the size of each small board line
+
+gc = game_controller(width, height, cell_size)  # import from game_controller
+
+# setup the canvas
+
+
+def setup():
+    """setup the size and color of sketch"""
+    size(SPACE['w'], SPACE['h'])
+    colorMode(RGB, 1)
+
+
+def draw():
+    """call some functions to draw"""
+    background(1)  # set color of canvas background
+    call draw function from game_controller
+
+
+def mousePressed():
+    """Define mousePressed function"""
+    gc.game_start = True  # start to play the game
+    gc.mouse = True
+
+
+def mouseReleased():
+    """Define mouseReleased function"""
+    gc.mouse = False  # release the dice
+
+
+1. Design the board in board.py file
+
+
+class Board():  # Create a class to draw the board
+    def __init__(self, cell_size):
+        self.cell_size = cell_size
+        pass
+
+    def draw_board(self):
+        # set the line weight value of the boarad
+        strokeWeight(line_weight_value)
+        stroke(color)  # set the board color
+        for i in range(N1, N2):
+            line(x1, y1, x2, y2)  # Draw the horizontal line of board
+        for j in range(N1, N2)
+        line(x1, y1, x2, y2)  # Draw the vertical line of board
+
+
+2. create a class named Disk
+
+
+class Disk():
+
+
+some fileds in __init__ method:
+column, cell_size, color, x, y, RED, YELLOW, collor_name
+
+
+def draw_disk():
+    fill()  # fill color to disk
+    noStroke()
+    circle(self.x, self.y, self.cell_size)  # draw the disk
+
+
+def color_of_disk():  # define the color of disks yellow or red
+    if self.color_name == "red":
+        # set the color as RED
+        self.color = self.RED
+    else:
+        # set the color as yellow
+        self.color = self.YELLOW
+
+
+3. create a class named game_controller
+
+
+class game_controller():
+    some fileds included in __init__ method
+    w, h, cell_size, disk, player and some boolean value like holding_disk, game_start, dropping, mouse
+    (Not all fields are included, it can be added according to demand)
+    # Value to create a delay/pause(3sec) when its computer's trun
+    # self.human_player_turn = Boolean to track if it's human(RED) palyer's a turn alternative
+    # set  self.turn = "HUAMN"
+    # Boolean/Value to store winner of the game
+    # initiate the grid(it should be a list of list)
+    # set a delay value like 3 second when its computer's trun
+
+    self.grid = [[None for _ in range(w)] for _ in range(h)]
+
+    def draw_me(self, mouseX, mouseY):
+        """this function will call draw_board and draw_disks functions"""
+        # check if game is over and call the funciton of check_game_over()
+        if game is over:
+            game_over()
+        # check if the mousepress in the specific area on the top of board
+        if game_start and area_detected():
+            draw_disks(mouseX, mouseY)
+        for loop in range(w):
+            for loop in range(h):
+                if self.grid[row][column]:
+                    draw_disk()  # draw disk
+
+    def draw_disks():
+        if mouse and not dropping:
+            # get the current column value
+            column = mouseX // cell_size
+            # get initial value of y
+            if column >= len(grid[0]):
+                column = len(grid[0])
+            # then set the y value to half_size
+            self.y = self.HALF_SIZE
+        else:
+            # get the target row of dropping dice
+            if self.y < target:
+                self.dropping = True  # set this value to true
+                self.y += self.y_vel  # incremental y with y_velocity
+        # then get to know if the column if full or not
+        if not check_column_full():
+            # create a new disk object
+            disk = Disk()
+            # then draw a disk
+            disk.draw_disk()
+            # then check if self.y equals to target value and self.y great than self.HALF_SIZE
+            if self.y == self.target and self.y > self.HALF_SIZE:
+                # then set the actual_available_row equals to new disk object
+                self.grid[self.get_available_row(
+                    self.column)][self.column] = disk
+                # then switch the color of player dice
+                self.next_player()
+                # then set these value to False
+                self.game_start = False
+                self.dropping = False
+
+    # to calculate the available row
+    def get_available_row():
+        for loop in range():
+            if self.grid[row][column] is None:
+                return row
+        return -1  # if not, return -1
+
+    # define a function that can alternate the color of dice
+    def next_player():
+        if self.player == "red":
+            self.player = "yellow"
+        else:
+            self.player = "red"
+
+    # define a function that can detect the area of board when player press the mouse
+    def area_detected():
+        """ this funciton will return True if player press mouse on the top of board"""
+        if mouseY >= 0 and mouseY <= self.cell_size and mouseX >= 0 \
+                and mouseX <= self.DBLE_SIZE:
+            return True
+        else:
+            return False
+
+    # check if the column if full
+    def check_column_full():
+        # check the last row of board to see if it is None or not
+        if self.grid[0][column] is None:
+            return False
+        return True
+
+    # check if game is over
+    def game_over():
+        if game is over:
+            # If game is over, print some words on processing screen
+            text("GAME OVER", value1, value2)
+
+    # get to know in which case, the game should be end
+    def is_game_over():
+        human_win = False
+        AI_win = False
+        if has a winner:  # -> will call a help method to check if get a winer
+            human_win = true or AI_win = true
+            Update field: self.gameover = True
+        else:
+            no winner
+
+    # check if human start to play
+    def human_player_to_play():
+        if not self.gameover:
+            drop the disk
+            PLAY THE GAME
+
+    # check if AI start to play
+    def AI_to_play():
+        if not self.gameover:
+            PLAY THE GAME
+
+    # check which side is a winer
+    def check_winner():
+        if there are four dice of the same color in a horizontal or vertical or diagonal direction or the board is full：
+        call function is_game_over()
+        call game_over()
+
+    # Get AI player rules
+    def get_AI_player_to_play():
+        use some smart algorithms and rules to decide AI player to drop the dice after human_player drop the dice
+
+    # Store the winner times and player name in a dictionary
+    def store_winner():
+        if check_winner():
+            if the winner is a human player:
+                add this information into a dictionary
+    
+    # sort the stored dictionary by value descending
+    def sorted_stored_dictionary():
+        for i in sorted_values:
+            for k in dict1.keys():
+                if dict1[k] == i:
+                    sorted_dict[k] = dict1[k]
+    

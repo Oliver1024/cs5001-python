@@ -1,0 +1,5 @@
+print("Name: My name is Kejian Tong.")
+print("DOB: My date of birth is Oct 30.")
+print("Hobbies: Skiing and running are my hobbies.")
+print("Favorite book: My favorite book is 'Wisdom from Rich Dad, Poor Dad'")
+print("Favorite movie: 'The Pursuit of Happyness' is my favorite movie." )

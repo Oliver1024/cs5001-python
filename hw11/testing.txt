@@ -1,0 +1,59 @@
+# test the following functions
+    Board:
+        draw_board():
+            Give appropriate values to see if it can draw a board like 2*2 grid
+            the result is correct
+
+    Disk:
+        draw_disk():
+            Individually run in processing, change self.x and self.y to see if this function can draw a circle with
+            different x and y
+            the result is correct
+
+    GameController:
+        __init__():
+            Change self.w and self.h, to see if self.grid can come out with different list of list, which are all None value
+            valid input 1: self.w = 2, self.h = 3
+            self.grid = [[None, None], [None, None]]
+            valid input 2: self.w = 3, self.h = 4
+            self.grid = [[None, None, None], [None, None, None], [None, None, None]]
+            the result is correct
+
+        draw_me():
+            Give different mouseX and mouseY to see if it can draw_disk and draw_board correctly
+            Simulate mouse clicking on different areas of the board
+            get the great result and can draw correctly
+
+        draw_disks():
+            Give different mouseX and mouseY to see if the disk can drop down correctly as expected
+            Simulate mouse clicking on different areas of the board
+            get the great result and can drop down correctly
+
+        get_available_row():
+            Input different column values to see if the function can return expected row or -1
+            Test several times
+            h = 2, row = 1, column = 1, return row = 1
+            the testing result is correct
+
+        next_player():
+            Test given either red or yellow, the returned result is good
+
+        area_detected():
+            Test click different area of board and to see if return the expected boolean value
+            and see in the console of processing, if it prints True when the mouse is put in the legal area,
+            and False if the mouse is put in illegal area.
+            the result is correct
+
+        check_column_full():
+            Check the top row of board is empty or not
+            test results is according to the expected value if the top row is None and return False and is not None, return True
+            The result is good
+
+        game_over()
+            Print certain text if the game is over
+            individually run in processing, to see if the function can show the text in the right way.
+            the outcome is good
+        
+        check_game_over()
+            Check row is None and return False, and is not None return True
+            testing result is good

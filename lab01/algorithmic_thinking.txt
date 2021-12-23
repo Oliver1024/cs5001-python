@@ -1,0 +1,111 @@
+# collaborative partners: Houming Leng, Sangsang Shao, Wen Liao, Kejian Tong
+
+Exercise 1: The robot typist
+
+set x is integer
+x represent the various message lines, assuming that x is greater than one line, type each line to fill it with new lines
+
+	if x  > 1
+		then get the real input line is integer y int((25-x)/2)
+	elif x <= 1
+		then get the real input line is integer y (25+1)/2 
+	
+Exercise 2: Remainders
+
+set any two integer number a, b
+set remainder is integer c,
+times is integer d
+
+if a > b
+	then a % b, c is the remainder and d is the times
+	then we can get the remainder is c == a - b*d
+elif a = b
+	then the remainder c is 0
+elif a < b
+	then b % a, c is the remainder and d is the times
+	the we can get the remainder is c == b - a*d
+
+Exercise 3: Triangle types
+
+As we know, a^2+b^2<c^2 >90 degree OBTUSE TRIANGLE
+                       a^2+b^2=c^2 =90 degree  RIGHT TRIANGLE
+                       a^2+b^2>c^2 <90 degree ACUTE TRIANGLE
+
+set the three sides of the triangle is length = [a,b,c],length[i] is a random side
+           if int(length[0]*length[0]) == int(length[1]*length[1]) + int(length[2]*length[2])
+		     then print("This triangle is ’RIGHT TRIANGLE'")
+	   elif int(length[0]*length[0]) > int(length[1]*length[1]) + int(length[2]*length[2])
+	             then print("This triangle is 'OBTUSE TRIANGLE''') 
+	   elif int(length[0]*length[0]) < int(length[1]*length[1]) + int(length[2]*length[2])
+	             then print("This triangle is 'ACUTE TRIANGLE'")
+	   elif length[0] == length[1] && length[1]== length[2]
+	             then print("This triangle is 'EQUILATERAL TRIANGLE'")
+	   elif length[0] == length[1] || length[1]== length[2] || length[0] == length[2]
+	             then print("This triangle is 'ISOSCELES TRIANGLE'")
+	   elif length[0] != length[1] != length[2]
+	             then print('This triangle is 'SCALENE TRIANGLE'")
+
+Exercise 4: The radio show
+
+set the first call k, time is a, response right answer time is b
+the total response time is c = a+b
+
+if the following person call k+i, call time is m, the following response answer time is n, i = i+1
+        if m+ n > c
+		then write c is on the business card
+	 elif m + n = c
+	      	then write c is on the business card
+	 elif m + n < c
+		then write the result of m + n on the business card, and compare the time(t) of the person who made the call later with m+n
+			if  t is less than m + n
+				then write the t on the business card
+			elif keep the m + n
+			
+Exercise 5: Dot-to-dot transmission
+
+messaging protocol with partner: each time my partner determines the position according to the given polar coordinate value
+
+scan and plan the coordinates of each point (x,y)
+	then store each result of the scan in a pre-defined array[(x1,y1),1]
+	pass this array to my partner, and tell this is his coordinates, and the number behind represents the order
+		for i=0; i++; i<=75
+			then cycle through the entire range of numbers and mark the given [(x, y), i]
+			then read the numbers in order, and mark the coordinate positions in order
+			then connect in numerical order
+
+Exercise 6: Celebrity finder
+
+define the number of people at the party as m
+Randomly pick 2 people from m to ask:"Does X know Y?"
+
+	if no one knows Y, 
+	then continue to grab one from the rest and ask the same question
+	then repeat the above questioning method until m-1 times
+        finally, it takes m-1 times at most to identify the celebrity
+
+Exercise 7: Poker hands
+
+define 52 poker cards as a set {color, number}
+mark the order of 10 sets of poker cards from left to right and top to bottom as numbers 1 to 10
+then randomly select 5 cards as the first set s1{color, number}, and the second set s2{color, number}
+first determine the set s, which is the position of the array [0]
+then put all of them in a temporary array a[x] for judgment
+
+	if a[x] is a flush and a straight flush
+	then compare between 1 and 2 set
+	elif they are the flush, which is belong set 5
+        if a[x] is a none-flush
+		elif a[x] is four of a kind
+			then a[x] belongs set 3
+		elif a[x] has three same numbers and if the left also have two same numbers
+			then a[x] belongs set 4, full house
+			else a[x] belongs set 7, three of a kind
+		elif a[x] has serial numbers
+			then a[x] belongs set 6, straight
+		elif a[x] has two pair of numbers
+			then a[x] belongs set 8, two pair
+		elif a[x] has only one pair of numbers
+			then a[x] belongs set 9, pair
+		else a[x] belongs set 10, high card
+	use the same method again to determine the element of the set s at position s[1]
+        finally can get s1 and s2 size 
